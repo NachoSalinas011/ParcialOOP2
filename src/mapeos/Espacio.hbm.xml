@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="datos.Espacio" table="espacio">
+    <id column="idEspacio" name="idEspacio">
+      <generator class="identity"/>
+    </id>
+     <property column="fecha" name="fecha" type="LocalDate"/>
+	 <property column="turno" name="turno" type="char"/>
+     <property column="libre" name="libre" type="boolean"/>
+     
+	<many-to-one name="aula" class="datos.Aula"
+	column="idAula" not-null="true"/>     
+</class>    
+</hibernate-mapping>
